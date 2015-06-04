@@ -1,0 +1,9 @@
+{
+  "spm": {
+    "main": "js/main.js",
+    "dependencies": {
+      "jquery": "2.1.4"
+    },
+    "buildArgs": "--sea relative --ignore jquery"
+  }
+}
