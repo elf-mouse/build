@@ -1,0 +1,15 @@
+{
+  "spm": {
+    "output": [
+      "index.html",
+      "index.js"
+    ],
+    "dependencies": {
+      "react": "0.13.3",
+      "react-router": "0.13.1"
+    },
+    "build": {
+      "extractCSS": true
+    }
+  }
+}
