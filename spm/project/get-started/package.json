@@ -1,0 +1,8 @@
+{
+  "spm": {
+    "dependencies": {
+      "moment": "2.9.0",
+      "util": "0.10.3"
+    }
+  }
+}
