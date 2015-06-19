@@ -1,0 +1,7 @@
+{
+  "name": "common-chunk-extraction",
+  "version": "0.0.0",
+  "devDependencies": {
+    "jquery": "~2.1.4"
+  }
+}
