@@ -26,10 +26,10 @@ module.exports = {
       loader: ExtractTextPlugin.extract('style-loader', 'css-loader')
     }, {
       test: /\.less$/,
-      loader: ExtractTextPlugin.extract('style-loader', 'css!less')
+      loader: ExtractTextPlugin.extract('style-loader', 'css-loader!less-loader')
     }, {
       test: /\.scss$/,
-      loader: ExtractTextPlugin.extract('css!sass')
+      loader: ExtractTextPlugin.extract('css-loader!sass-loader') // not work :(
     }, {
       test: /\.(png|jpg)$/,
       loader: 'url-loader?limit=8192'
@@ -49,6 +49,8 @@ module.exports = {
       new webpack.ResolverPlugin.DirectoryDescriptionFilePlugin('bower.json', ['main'])
     ),
     //new webpack.optimize.UglifyJsPlugin(),
-    new ExtractTextPlugin('[name].css')
+    new ExtractTextPlugin('[name].css', {
+        allChunks: true
+    })
   ]
 };

@@ -1,7 +1,7 @@
 //require('./style.css');
 //require('./style.less');
 //require('./../../css/home.less');
-require('./style.scss'); // not work :(
+//require('./style.scss'); // not work :(
 
 import homePage from './homePage';
 import dashboard from './dashboard';
