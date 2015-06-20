@@ -1,7 +1,6 @@
 //import $ from 'jquery';
 import { jquery as $, test } from 'utils'; // './../common/utils';
 
-
 let $W = $(window);
 
 test('ok');

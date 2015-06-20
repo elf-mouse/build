@@ -1,15 +1,19 @@
 var path = require('path');
 var webpack = require('webpack');
-var appPath = path.resolve(__dirname, 'app', 'js');
-var distPath = path.resolve(__dirname, 'dist', 'js');
+var ExtractTextPlugin = require('extract-text-webpack-plugin');
+var config = {
+  appPath: path.resolve(__dirname, 'app', 'js'),
+  distPath: path.resolve(__dirname, 'dist', 'assets')
+};
 
 module.exports = {
   entry: {
-    home: path.resolve(appPath, 'home', 'home.js'),
-    admin: path.resolve(appPath, 'admin', 'admin.js')
+    home: path.resolve(config.appPath, 'home', 'home.js'),
+    admin: path.resolve(config.appPath, 'admin', 'admin.js')
   },
   output: {
-    path: distPath,
+    path: config.distPath,
+    publicPath: 'http://localhost:8080/',
     filename: '[name]Bundle.js'
   },
   module: {
@@ -17,6 +21,18 @@ module.exports = {
       test: /\.js$/,
       exclude: /node_modules/,
       loader: 'babel-loader'
+    }, {
+      test: /\.css$/,
+      loader: ExtractTextPlugin.extract('style-loader', 'css-loader')
+    }, {
+      test: /\.less$/,
+      loader: ExtractTextPlugin.extract('style-loader', 'css!less')
+    }, {
+      test: /\.scss$/,
+      loader: ExtractTextPlugin.extract('css!sass')
+    }, {
+      test: /\.(png|jpg)$/,
+      loader: 'url-loader?limit=8192'
     }]
   },
   resolve: {
@@ -31,6 +47,8 @@ module.exports = {
   plugins: [
     new webpack.ResolverPlugin(
       new webpack.ResolverPlugin.DirectoryDescriptionFilePlugin('bower.json', ['main'])
-    )
+    ),
+    //new webpack.optimize.UglifyJsPlugin(),
+    new ExtractTextPlugin('[name].css')
   ]
 };
