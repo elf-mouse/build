@@ -3,4 +3,5 @@ bower_components
 dist
 node_modules
 spm_modules
+tmp
 *.log
