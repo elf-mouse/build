@@ -1,17 +1,17 @@
+var config = require('./config.json');
 var path = require('path');
 var webpack = require('webpack');
 
 module.exports = {
   entry: {
     home: [
-      'webpack-dev-server/client?http://0.0.0.0:8080',
       'webpack/hot/dev-server',
       './public/js/home/index.js'
     ],
     user: './public/js/user/index.js'
   },
   output: {
-    path: './build',
+    path: './build/assets',
     publicPath: '/assets/',
     filename: '[name].js'
   },
@@ -22,7 +22,13 @@ module.exports = {
       loader: 'babel-loader'
     }, {
       test: /\.css$/,
-      loader: "style!css"
+      loader: 'style!css'
+    }, {
+      test: /\.tpl$/,
+      loader: 'handlebars-loader'
+    }, {
+      test: /\.html$/,
+      loader: 'html-loader'
     }]
   },
   resolve: {
@@ -30,12 +36,7 @@ module.exports = {
       path.join(__dirname, 'spm_modules'),
       path.join(__dirname, 'public', 'js')
     ],
-    alias: {
-      jquery: 'jquery/1.11.3/dist/jquery.js',
-      main: 'main.js',
-      plugin: 'vendor/plugin.js',
-      async: 'vendor/async.js'
-    }
+    alias: config.alias
   },
   plugins: [
     new webpack.HotModuleReplacementPlugin()
