@@ -21,7 +21,8 @@
       "public/js/user/index.js"
     ],
     "vendor": [
-      "jquery"
+      "jquery",
+      "handlebars"
     ],
     "dependencies": {
       "seajs": "~2.3.0",

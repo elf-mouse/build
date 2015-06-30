@@ -39,8 +39,8 @@ module.exports = {
     alias: config.alias
   },
   plugins: [
-    new webpack.HotModuleReplacementPlugin()
-    //new webpack.optimize.UglifyJsPlugin()
+    new webpack.HotModuleReplacementPlugin(),
+    new webpack.optimize.UglifyJsPlugin()
   ],
   devServer: {
     contentBase: './build',
