@@ -4,15 +4,12 @@ var webpack = require('webpack');
 
 module.exports = {
   entry: {
-    home: [
-      'webpack/hot/dev-server',
-      './public/js/home/index.js'
-    ],
+    home: './public/js/home/index.js',
     user: './public/js/user/index.js'
   },
   output: {
-    path: './build/assets',
-    publicPath: '/assets/',
+    path: './build',
+    publicPath: '/',
     filename: '[name].js'
   },
   module: {
@@ -24,11 +21,11 @@ module.exports = {
       test: /\.css$/,
       loader: 'style!css'
     }, {
-      test: /\.tpl$/,
-      loader: 'handlebars-loader'
-    }, {
       test: /\.html$/,
       loader: 'html-loader'
+    }, {
+      test: /\.tpl$/,
+      loader: 'handlebars-loader'
     }]
   },
   resolve: {
@@ -39,17 +36,7 @@ module.exports = {
     alias: config.alias
   },
   plugins: [
-    new webpack.HotModuleReplacementPlugin(),
-    new webpack.optimize.UglifyJsPlugin()
-  ],
-  devServer: {
-    contentBase: './build',
-    //quiet: true,
-    //colors: true,
-    noInfo: true,
-    //host: '0.0.0.0',
-    //port: '8080',
-    inline: true,
-    hot: true
-  }
+    new webpack.HotModuleReplacementPlugin()
+    //new webpack.optimize.UglifyJsPlugin()
+  ]
 };

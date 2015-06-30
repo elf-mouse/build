@@ -1,7 +1,6 @@
 console.info('main');
 
 var url = require('./config/url.js');
-//var async = require('async');
 
 var main = {
   name: 'hello world',
@@ -11,9 +10,14 @@ var main = {
   }
 };
 
-if (location.href.indexOf('?debug')) {
+if (location.href.indexOf('?debug') > -1) {
+  // for dev by seajs
   //require.async('async');
-  //async();
+
+  // for build
+  require.ensure([], function() {
+    require('async');
+  });
 }
 
 module.exports = main;

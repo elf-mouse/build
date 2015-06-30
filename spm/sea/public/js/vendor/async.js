@@ -2,12 +2,12 @@ console.info('async');
 
 var $ = require('jquery');
 
-var $body = $('body');
+var $demo = $('#demo');
 
 function getWinSize() {
   console.warn('getWinSize');
   console.log($(window).width());
-  $body.html('width: ' + $(window).width());
+  $demo.html('width: ' + $(window).width());
 }
 
 function init() {
@@ -18,4 +18,4 @@ function init() {
   getWinSize();
 }
 
-module.exports = init;
+init();
