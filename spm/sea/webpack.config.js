@@ -31,12 +31,11 @@ module.exports = {
   resolve: {
     root: [
       path.join(__dirname, 'spm_modules'),
-      path.join(__dirname, 'public', 'js')
+      path.join(__dirname, 'public/js')
     ],
     alias: config.alias
   },
   plugins: [
-    new webpack.HotModuleReplacementPlugin()
     //new webpack.optimize.UglifyJsPlugin()
   ]
 };
