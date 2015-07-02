@@ -3,14 +3,11 @@ var path = require('path');
 var webpack = require('webpack');
 
 module.exports = {
-  entry: {
-    home: './public/js/home/index.js',
-    user: './public/js/user/index.js'
-  },
+  entry: './public/js/home/index.js',
   output: {
-    path: './build',
-    publicPath: '/',
-    filename: '[name].js'
+    path: './assets/js/home',
+    publicPath: '/assets/js/home/',
+    filename: '[name].index.js'
   },
   module: {
     loaders: [{
