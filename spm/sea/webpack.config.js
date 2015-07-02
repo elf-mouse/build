@@ -26,6 +26,9 @@ module.exports = {
     }, {
       test: /\.tpl$/,
       loader: 'handlebars-loader'
+    }, {
+      test: /\.(png|jpg)$/,
+      loader: 'url-loader?limit=8192'
     }]
   },
   resolve: {

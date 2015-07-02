@@ -1,9 +1,28 @@
 {
+  "buildTest": "home/index.js",
+  "buildList": [
+    "home/index.js",
+    "user/index.js"
+  ],
   "alias": {
     "jquery": "jquery/1.11.3/dist/jquery.js",
     "handlebars": "handlebars/2.0.0/dist/cjs/handlebars.js",
     "source-map": "source-map/1.0.2/source-map.js",
+    "arale-base": "arale-base/1.2.0/base.js",
+    "arale-class": "arale-class/1.2.0/class.js",
+    "arale-events": "arale-events/1.2.0/events.js",
+    "arale-widget": "arale-widget/1.2.1/widget.js",
     "arale-templatable": "arale-templatable/0.10.0/src/templatable.js",
+    "arale-upload": "arale-upload/1.2.0/index.js",
+    "arale-iframe-shim": "arale-iframe-shim/1.1.0/index.js",
+    "position": "position/1.1.0/index.js",
+    "arale-overlay": "arale-overlay/1.2.0/overlay.js",
+    "arale-calendar": "arale-calendar/1.1.2/index.js",
+    "arale-overlay": "arale-overlay/1.2.0/overlay.js",
+    "arale-popup": "arale-popup/1.2.0/popup.js",
+    "placeholders": "placeholders.js/3.0.2/build/placeholders.js",
+    "moment": "moment/2.10.3/moment.js",
+    "selection": "selection.js/0.10.0/src/selection.js",
     "main": "main.js",
     "plugin": "vendor/plugin.js",
     "async": "vendor/async.js"
